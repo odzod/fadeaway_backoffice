@@ -7,13 +7,13 @@ body {font: 14px/25px Arial, Helvetica, sans-serif;color:#292929;min-width:960px
 /***********************************************************************/
 a {text-decoration:none; cursor:pointer;}
 a:hover {text-decoration:none;}
-a.button {background:#f4f4f4; font-size:14px; line-height:18px; color:#01a5ca; text-transform:uppercase; display:inline-block; padding:12px 16px 13px 16px; }
+a.button {background:#f4f4f4; font-size:14px; line-height:18px; color:#FB9342; text-transform:uppercase; display:inline-block; padding:12px 16px 13px 16px; }
 a.button:hover {background:#d3d1d1; color:#333; }
 
-a.link {text-decoration:none; cursor:pointer; color:#01a5ca; }
+a.link {text-decoration:none; cursor:pointer; color:#FB9342; }
 a.link:hover {text-decoration:underline;}
 
-.color-1 { color:#01a5ca;}
+.color-1 { color:#FB9342;}
 a.color-1:hover {color:#000;}
 
 .font-3 {font-size:17px; line-height:33px; color:#292929;}
@@ -23,10 +23,10 @@ h2 { font-size:30px; line-height:36px; color:#292929; font-weight:normal; letter
 ul {margin:0; padding:0;list-style-image:none;}
 ul.list-1 li {padding:0px 0 5px 12px; line-height:25px; background:url(../images/marker-1.gif) 0 11px no-repeat;}
 ul.list-1 li a { font-size:14px; color:#292929; line-height:25px;}
-ul.list-1 li a:hover {color:#01a5ca;}
+ul.list-1 li a:hover {color:#FB9342;}
 
 ul.list-2 li {padding:0px 0 5px 12px; line-height:25px; background:url(../images/marker-1.gif) 0 11px no-repeat;}
-ul.list-2 li a { font-size:14px; color:#01a5ca; line-height:25px;}
+ul.list-2 li a { font-size:14px; color:#FB9342; line-height:25px;}
 ul.list-2 li a:hover { color:#292929;}
 
 /******************************************************************/
@@ -64,20 +64,21 @@ ul.list-2 li a:hover { color:#292929;}
 header {width:100%; z-index:101; position:relative; overflow:hidden; padding-bottom:17px;}
 
 h1 {float:left; margin:23px 0 0px 29px;}
-h1 a {font-size:53px; line-height:65px; color:#01a5ca; letter-spacing:1px; display:inline-block;}
-h1 a strong {display:block; color:#292929; margin-top:-21px; font-weight:normal;}
+h1 a {font-size:40px; line-height:65px; color:#FB9342; /*letter-spacing:-4px; */display:inline-block;}
+h1 a strong {color:#292929; margin-top:-21px; font-weight:normal;}
+h1 a strong strong {color:#292929; margin-top:-21px; font-weight:normal;}
 
-.social-icons {overflow:hidden; text-align:right; margin-top:35px;}
+.social-icons {overflow:hidden; text-align:right; margin-top:35px;margin-right:30px;}
 .social-icons a {display:inline-block; width:23px; height:23px; float:right;}
 .icon-1 {background:url(../images/icon-1.png) 0 0 no-repeat;}
 .icon-2 {background:url(../images/icon-2.png) 0 0 no-repeat; margin-left:7px;}
 .social-icons a:hover {background-position:0 bottom;}
 
-nav {overflow:hidden; margin-right:30px;}
-ul.menu {float:right; margin-top:39px;}
+nav {overflow:hidden; margin-right:30px;display: inline-block;float:right;}
+ul.menu {float:right; margin-top:20px;}
 ul.menu li {float:left; line-height:20px; margin:0px 0 0px 44px;}
-ul.menu li a {font-size:17px; line-height:22px; color:#292929; display:inline-block; }
-ul.menu li a:hover, ul.menu li.current a {color:#01a5ca;}
+ul.menu li a {font-size:17px; line-height:22px; color:#292929; }
+ul.menu li a:hover, ul.menu li.current a {color:#FB9342;}
 
 .bg-img {background:url(../images/bg-img.gif) 0 0 no-repeat; width:150px; height:6px; position:absolute; top:-6px; left:-152px;}
 
@@ -95,7 +96,7 @@ ul.menu li a:hover, ul.menu li.current a {color:#01a5ca;}
 
 .form-search {margin:27px 0px 0 0px; width:210px; }
 #form-search input { width:188px; border:#f4f4f4 1px solid; height:18px; font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#bebebe;  vertical-align:top; padding:11px 9px 12px 11px; display:inline-block; margin-top:19px;}
-.search_button {background:#f4f4f4; font-size:14px; line-height:18px; color:#01a5ca; text-transform:uppercase; display:inline-block; padding:12px 28px 13px 28px; margin:15px 0px 0 0;}
+.search_button {background:#f4f4f4; font-size:14px; line-height:18px; color:#FB9342; text-transform:uppercase; display:inline-block; padding:12px 28px 13px 28px; margin:15px 0px 0 0;}
 .search_button:hover {background:#d3d1d1; color:#333; }
 
 .box-2>div {float:left; width:170px; margin-right:30px;}

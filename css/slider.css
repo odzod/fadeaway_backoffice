@@ -25,9 +25,9 @@
 }
 .banner {display:block; position:absolute; left:685px; top:37px; z-index:99; width:235px;}
 .banner p {}
-.font-1 { font-size:45px; line-height:55px; color:#01a5ca; letter-spacing:-1px;}
+.font-1 { font-size:45px; line-height:55px; color:#FB9342; letter-spacing:-1px;}
 .font-1 span {display:block; margin-top:-15px;}
 .font-2 {font-size:17px; line-height:28px; color:#949494; margin-top:19px;}
 
 .banner a {display:inline-block; background:#3f3f3f; font-size:14px; line-height:18px; color:#fff; text-transform:uppercase; padding:12px 27px 13px 27px; margin-top:30px;}
-.banner a:hover {background:#01a5ca;}
+.banner a:hover {background:#FB9342;}
