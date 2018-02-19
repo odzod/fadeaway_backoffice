@@ -5,11 +5,8 @@ function update_db()
 
     $_msg = array();
 
-    $link = mysqli_connect(mysql_host, mysql_user, mysql_password)
-    or $_msg[] = "Erreur de connexion à la base de donnéées";
-    @mysqli_select_db($link, mysql_db);
-
-    $res = @mysqli_query($link, "SELECT config_val FROM config WHERE config_var = 'db_version'");
+    $db = getDb();
+    $res = $db->query("SELECT config_val FROM config WHERE config_var = 'db_version'");
     $num_version = 0;
 
     if (!$res) {
@@ -17,7 +14,7 @@ function update_db()
         $res = @mysqli_multi_query($link, $query);
         $_msg[] = "Init version 0<br/>";
     } else {
-        $row = @mysqli_fetch_array($res);
+        $row = $res->fetchAll();
         $num_version = $row[0];
         $_msg[] = "Version actuelle : $num_version <br/>";
     }
@@ -33,7 +30,7 @@ function update_db()
             if (intval($_name[0] > intval($num_version))) {
                 $query = file_get_contents("./" . $file);
                 $query .= "UPDATE config SET config_val ='" . $_name[0] . "' WHERE config_var = 'db_version';";
-                $res = @mysqli_multi_query($link, $query);
+                $res = $db->query($query);
                 $num_version = $_name[0];
                 if (!$res) {
                     $breaker = true;

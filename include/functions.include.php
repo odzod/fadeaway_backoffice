@@ -32,3 +32,22 @@ function response_ok($result){
     $response->send();
     die;
 }
+
+function response_ko(){
+    $response = new Response(
+        '',
+        Response::HTTP_FORBIDDEN,
+        array(
+            'Access-Control-Allow-Origin'=>'*'
+        )
+    );
+    $response->send();
+    die;
+}
+
+function getDb(){
+    include_once(__DIR__."/../include/config.include.php");
+    $dsn = sprintf( 'mysql:dbname=%s;host=%s', mysql_db, mysql_host);
+    $db = new PDO($dsn,mysql_user,mysql_password);
+    return $db;
+}

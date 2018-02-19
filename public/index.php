@@ -18,19 +18,6 @@ $app->register(new SessionServiceProvider());
 $app->register(new JDesrosiers\Silex\Provider\CorsServiceProvider(), []);
 
 
-// STRUCTURE RESPONSE KO
-function response_false(){
-    $response = new Response(
-        '',
-        Response::HTTP_FORBIDDEN,
-        array(
-            'Access-Control-Allow-Origin'=>'*'
-        )
-    );
-    $response->send();
-    die;
-}
-
 
 include_once(__DIR__.'/../app/routes.php');
 
