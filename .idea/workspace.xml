@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="831e3601-1bc1-427d-be57-9f8c7812b4ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/class.include.php" />
-      <change beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change beforePath="$PROJECT_DIR$/app/models/News.php" afterPath="$PROJECT_DIR$/app/models/News.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.include.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/functions.include.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -47,16 +56,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2_ajout_utilisateurs.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="3_add_base_news.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/3_add_base_news.sql">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,18 +76,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="630">
+              <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding>
-                <marker date="1519134551600" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
-                <marker date="1519134551600" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
-                <marker date="1519134551600" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
-                <marker date="1519134551600" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
-                <marker date="1519134551600" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
-                <marker date="1519134551600" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
+                <marker date="1519135151068" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
+                <marker date="1519135151068" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
+                <marker date="1519135151068" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
+                <marker date="1519135151068" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
+                <marker date="1519135151068" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
+                <marker date="1519135151068" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
               </folding>
             </state>
           </provider>
@@ -148,10 +147,10 @@
         <option value="$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql" />
         <option value="$PROJECT_DIR$/sql/3_add_base_news.sql" />
         <option value="$PROJECT_DIR$/app/models/Users.php" />
-        <option value="$PROJECT_DIR$/app/models/News.php" />
         <option value="$PROJECT_DIR$/app/models/Models.php" />
         <option value="$PROJECT_DIR$/include/class.include.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/models/News.php" />
       </list>
     </option>
   </component>
@@ -279,12 +278,12 @@
       <workItem from="1517663620717" duration="123000" />
       <workItem from="1517663764621" duration="64000" />
       <workItem from="1517682231201" duration="3338000" />
-      <workItem from="1519129588248" duration="5337000" />
+      <workItem from="1519129588248" duration="5526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10698000" />
+    <option name="totallyTimeSpent" value="10887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1329" y="109" width="1004" height="1096" extended-state="0" />
@@ -395,26 +394,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Models.php">
+    <entry file="file://$PROJECT_DIR$/include/class.include.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding>
-            <marker date="1519134551600" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
-            <marker date="1519134551600" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
-            <marker date="1519134551600" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
-            <marker date="1519134551600" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
-            <marker date="1519134551600" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
-            <marker date="1519134551600" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -429,19 +413,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.include.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Models.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        <state relative-caret-position="195">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/functions.include.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <marker date="1519135151068" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
+            <marker date="1519135151068" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
+            <marker date="1519135151068" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
+            <marker date="1519135151068" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
+            <marker date="1519135151068" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
+            <marker date="1519135151068" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
+          </folding>
         </state>
       </provider>
     </entry>
