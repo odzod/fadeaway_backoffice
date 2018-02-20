@@ -23,8 +23,7 @@ function update_db()
         $_msg[] = "Init version 0<br/>";
     } else {
         $row = $res->fetchAll();
-        print_r($row);die;
-        $num_version = $row[0];
+        $num_version = $row[0][0];
         $_msg[] = "Version actuelle : $num_version <br/>";
     }
 
