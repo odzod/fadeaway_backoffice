@@ -13,6 +13,9 @@ function update_db()
     if (!$res) {
         $query = file_get_contents("0_base_version.sql");
         $res = $db->query($query);
+        if(!$res){
+            $_msg[]= 'Erreur lors de l init';
+        }
         $_msg[] = "Init version 0<br/>";
     } else {
         $row = $res->fetchAll();
