@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="831e3601-1bc1-427d-be57-9f8c7812b4ad" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/include/class.include.php" />
       <change beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,21 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="0_base_version.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/0_base_version.sql">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <file leaf-file-name="class.include.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/class.include.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="75">
+              <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -149,6 +150,7 @@
         <option value="$PROJECT_DIR$/app/models/Users.php" />
         <option value="$PROJECT_DIR$/app/models/News.php" />
         <option value="$PROJECT_DIR$/app/models/Models.php" />
+        <option value="$PROJECT_DIR$/include/class.include.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
@@ -277,12 +279,12 @@
       <workItem from="1517663620717" duration="123000" />
       <workItem from="1517663764621" duration="64000" />
       <workItem from="1517682231201" duration="3338000" />
-      <workItem from="1519129588248" duration="5198000" />
+      <workItem from="1519129588248" duration="5337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10559000" />
+    <option name="totallyTimeSpent" value="10698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1329" y="109" width="1004" height="1096" extended-state="0" />
@@ -427,10 +429,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/class.include.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
