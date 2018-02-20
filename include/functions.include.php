@@ -8,12 +8,13 @@ use Symfony\Component\HttpFoundation\Response;
  * Date: 19/02/2018
  * Time: 23:07
  */
-function response_notConnect(){
+function response_notConnect()
+{
     $response = new Response(
         '',
         Response::HTTP_UNAUTHORIZED,
         array(
-            'Access-Control-Allow-Origin'=>'*'
+            'Access-Control-Allow-Origin' => '*'
         )
     );
     $response->send();
@@ -21,12 +22,13 @@ function response_notConnect(){
 }
 
 //STRUCTURE RESPONSE OK
-function response_ok($result){
+function response_ok($result)
+{
     $response = new Response(
         $result,
         Response::HTTP_OK,
         array(
-            'Access-Control-Allow-Origin'=>'*'
+            'Access-Control-Allow-Origin' => '*'
         )
     );
     $response->send();
@@ -34,12 +36,13 @@ function response_ok($result){
 }
 
 //STRUCTURE RESPONSE KO
-function response_ko(){
+function response_ko()
+{
     $response = new Response(
         '',
         Response::HTTP_FORBIDDEN,
         array(
-            'Access-Control-Allow-Origin'=>'*'
+            'Access-Control-Allow-Origin' => '*'
         )
     );
     $response->send();
@@ -47,14 +50,15 @@ function response_ko(){
 }
 
 // CONNEXION A LA BDD
-function getDb(){
-    include_once(__DIR__."/../include/config.include.php");
+function getDb()
+{
+    include_once(__DIR__ . "/../include/config.include.php");
     try {
-        $dsn = sprintf( 'mysql:dbname=%s;host=%s', mysql_db, mysql_host);
-        $db = new PDO($dsn,mysql_user,mysql_password,
+        $dsn = sprintf('mysql:dbname=%s;host=%s', mysql_db, mysql_host);
+        $db = new PDO($dsn, mysql_user, mysql_password,
             array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         return $db;
-    } catch {
+    } catch(Exception $exception) {
         die("impossible d'accéder à la base de données");
     }
 
