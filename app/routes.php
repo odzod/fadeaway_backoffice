@@ -5,6 +5,9 @@ include_once(__DIR__ . "/../include/functions.include.php");
 // Les routes admins sont simplements séparés dans un fichier pour l'instant
 include_once(__DIR__ . "/../app/admin.routes.php");
 
+use \Models_Models;
+use \Models_News;
+use \Models_Users;
 
 //ici les routes de l'api "normal"
 $app->get('/news/last', function () {
