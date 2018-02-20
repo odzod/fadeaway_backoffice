@@ -2,18 +2,12 @@
 
 include_once(__DIR__ . "/../include/functions.include.php");
 
-$app->get('/sql/dbupdate', function () {
+// Les routes admins sont simplements séparés dans un fichier pour l'instant
+include_once(__DIR__."/../app/admin.routes.php");
 
-    if ($_REQUEST['token'] == 'ptrn4883') {
-        require_once(__DIR__ . "/../sql/dbupdate.php");
-        $res = update_db();
-        $res = json_encode(array("success" => true, "data" => json_encode($res)));
-        response_ok($res);
-    } else {
-        response_ko();
-    }
 
-});
+//ici les routes de l'api "normal"
+
 
 /*
 $app->post('/tiers/connexion', function (Request $request) use ($app){

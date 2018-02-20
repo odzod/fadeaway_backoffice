@@ -17,8 +17,6 @@ $app = new Silex\Application();
 $app->register(new SessionServiceProvider());
 $app->register(new JDesrosiers\Silex\Provider\CorsServiceProvider(), []);
 
-
-
 include_once(__DIR__.'/../app/routes.php');
 
 $app->run();
