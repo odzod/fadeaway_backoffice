@@ -7,6 +7,10 @@ function update_db()
 
     $db = getDb();
 
+    if(!$db){
+        $_msg[] = "Erreur lors de la connexion a la bdd";
+    }
+
     $res = $db->query("SELECT config_val FROM config WHERE config_var = 'db_version'");
     $num_version = 0;
 
