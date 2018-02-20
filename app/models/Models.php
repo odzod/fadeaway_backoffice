@@ -6,7 +6,7 @@
  * Time: 13:35
  */
 
-class Models
+class Models_Models
 {
 
     public $db;

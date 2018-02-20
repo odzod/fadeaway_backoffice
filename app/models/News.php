@@ -6,7 +6,7 @@
  * Time: 13:36
  */
 
-class News extends Models
+class Models_News extends Models_Models
 {
 
     public $item_per_page = 10;
@@ -37,7 +37,7 @@ class News extends Models
         $res = $this->db->query($query)->fetchAll();
         $data = array();
         foreach($res as $news){
-            $user = new Users($this->db);
+            $user = new Models_Users($this->db);
             $user->loadDataFromId($news['news_user_id']);
             $_userData = $user->getData();
             unset($news['news_user_id']);

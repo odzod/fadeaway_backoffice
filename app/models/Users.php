@@ -6,7 +6,7 @@
  * Time: 14:12
  */
 
-class Users extends Models
+class Models_Users extends Models_Models
 {
 
     public $id;

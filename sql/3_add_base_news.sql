@@ -1,17 +1,17 @@
 INSERT INTO `news_type` (`nt_id`, `nt_type`)
-VALUES (NULL, 'INFOS');
+VALUES (1, 'INFOS');
 
 INSERT INTO `news_type` (`nt_id`, `nt_type`)
-VALUES (NULL, 'DOSSIERS');
+VALUES (2, 'DOSSIERS');
 
 INSERT INTO `news_type` (`nt_id`, `nt_type`)
-VALUES (NULL, 'CLUTCH');
+VALUES (3, 'CLUTCH');
 
 INSERT INTO `news_type` (`nt_id`, `nt_type`)
-VALUES (NULL, 'VIDEOS');
+VALUES (4, 'VIDEOS');
 
 INSERT INTO `news_type` (`nt_id`, `nt_type`)
-VALUES (NULL, 'TEMPS MORT');
+VALUES (5, 'TEMPS MORT');
 
 
 INSERT INTO `news` ( `news_type`, `news_title`, `news_title_contains`, `news_img`, `news_contains`, `news_user_id`, `news_create`, `news_update`, `news_difuse`)
