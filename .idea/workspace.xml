@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="831e3601-1bc1-427d-be57-9f8c7812b4ad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/models/News.php" afterPath="$PROJECT_DIR$/app/models/News.php" />
-      <change beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -77,18 +76,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+            <state relative-caret-position="540">
+              <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
               <folding>
-                <marker date="1519135193345" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
-                <marker date="1519135193345" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
-                <marker date="1519135193345" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
-                <marker date="1519135193345" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
-                <marker date="1519135193345" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
-                <marker date="1519135193345" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
+                <marker date="1519135277691" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
+                <marker date="1519135277691" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
+                <marker date="1519135277691" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
+                <marker date="1519135277691" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
+                <marker date="1519135277691" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
+                <marker date="1519135277691" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
               </folding>
             </state>
           </provider>
@@ -150,8 +149,8 @@
         <option value="$PROJECT_DIR$/app/models/Users.php" />
         <option value="$PROJECT_DIR$/app/models/Models.php" />
         <option value="$PROJECT_DIR$/include/class.include.php" />
-        <option value="$PROJECT_DIR$/app/models/News.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/models/News.php" />
       </list>
     </option>
   </component>
@@ -279,12 +278,12 @@
       <workItem from="1517663620717" duration="123000" />
       <workItem from="1517663764621" duration="64000" />
       <workItem from="1517682231201" duration="3338000" />
-      <workItem from="1519129588248" duration="5596000" />
+      <workItem from="1519129588248" duration="5665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10957000" />
+    <option name="totallyTimeSpent" value="11026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1329" y="109" width="1004" height="1096" extended-state="0" />
@@ -430,26 +429,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-          <folding>
-            <marker date="1519135193345" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
-            <marker date="1519135193345" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
-            <marker date="1519135193345" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
-            <marker date="1519135193345" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
-            <marker date="1519135193345" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
-            <marker date="1519135193345" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <marker date="1519135277691" expanded="true" signature="443:765" ph="SELECT * FRO... news" />
+            <marker date="1519135277691" expanded="true" signature="443:766" ph="SELECT * FRO... news" />
+            <marker date="1519135277691" expanded="true" signature="443:767" ph="SELECT * FRO... news" />
+            <marker date="1519135277691" expanded="true" signature="443:776" ph="SELECT * FRO... news" />
+            <marker date="1519135277691" expanded="true" signature="443:779" ph="SELECT * FRO... news" />
+            <marker date="1519135277691" expanded="true" signature="443:780" ph="SELECT * FRO... news" />
+          </folding>
         </state>
       </provider>
     </entry>

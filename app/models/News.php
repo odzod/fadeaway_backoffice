@@ -42,7 +42,7 @@ class Models_News extends Models_Models
             $_userData = $user->getData();
             unset($news['news_user_id']);
             $news['news_user_nom']= $_userData['user_nom'];
-            $news['news_user_prenom']= $_userData['user_nom'];
+            $news['news_user_prenom']= $_userData['user_prenom'];
             $data[] = $news;
         }
         return $data;
