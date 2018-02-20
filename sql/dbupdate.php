@@ -7,7 +7,9 @@ function update_db()
 
     $db = getDb();
 
-    die("test01");
+    print_r($db->errorInfo());
+
+//    die("test01");
     $res = $db->query("SELECT config_val FROM config WHERE config_var = 'db_version'");
     $num_version = 0;
 
