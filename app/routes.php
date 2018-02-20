@@ -3,11 +3,30 @@
 include_once(__DIR__ . "/../include/functions.include.php");
 
 // Les routes admins sont simplements séparés dans un fichier pour l'instant
-include_once(__DIR__."/../app/admin.routes.php");
+include_once(__DIR__ . "/../app/admin.routes.php");
 
 
 //ici les routes de l'api "normal"
+$app->get('/news/last', function () {
 
+    $model = new News(getDb());
+    $page = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 0;
+    $res = $model->getLastNews($page);
+    $res = json_encode(
+        array(
+            "success" => true
+        , "data" => json_encode($res)
+        )
+    );
+    if (!$res) {
+        response_ok(json_encode(array(
+            "success" => false
+        , "msg" => "Erreur RES (News)getLastNews"
+        )));
+    }
+    response_ok($res);
+
+});
 
 /*
 $app->post('/tiers/connexion', function (Request $request) use ($app){

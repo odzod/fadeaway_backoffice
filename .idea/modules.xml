@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../fadeaway_fo/fadeaway/.idea/fadeaway.iml" filepath="$PROJECT_DIR$/../fadeaway_fo/fadeaway/.idea/fadeaway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fadeaway_backoffice.iml" filepath="$PROJECT_DIR$/.idea/fadeaway_backoffice.iml" />
     </modules>
   </component>
 </project>
