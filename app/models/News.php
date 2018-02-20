@@ -45,7 +45,7 @@ class Models_News extends Models_Models
             $news['news_user_prenom']= $_userData['user_nom'];
             $data[] = $news;
         }
-        return json_encode($data);
+        return $data;
     }
 
 }

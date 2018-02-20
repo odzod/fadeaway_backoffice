@@ -16,7 +16,7 @@ $app->get('/news/last', function () {
     $res = json_encode(
         array(
             "success" => true
-        , "data" => json_encode($res)
+        , "data" => $res
         )
     );
     if (!$res) {
