@@ -2,10 +2,7 @@ CREATE TABLE `config` (
   `config_id`  INT(11)                       NOT NULL,
   `config_var` VARCHAR(256) COLLATE utf8_bin NOT NULL,
   `config_val` VARCHAR(256) COLLATE utf8_bin NOT NULL
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8
-  COLLATE = utf8_bin;
+);
 
 ALTER TABLE `config`
   ADD PRIMARY KEY (`config_id`);
