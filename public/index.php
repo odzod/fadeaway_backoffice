@@ -1,5 +1,7 @@
 <?php
 
+echo "hello";
+
 use Silex\Provider\SessionServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
