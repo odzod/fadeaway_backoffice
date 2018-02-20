@@ -52,7 +52,7 @@ function getDb(){
     try {
         $dsn = sprintf( 'mysql:dbname=%s;host=%s', mysql_db, mysql_host);
         $db = new PDO($dsn,mysql_user,mysql_password,
-            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         return $db;
     } catch {
         die("impossible d'accéder à la base de données");
