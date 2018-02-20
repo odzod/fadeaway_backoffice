@@ -7,15 +7,12 @@ function update_db()
 
     $db = getDb();
 
-    print_r($db->errorInfo());
-
-//    die("test01");
     $res = $db->query("SELECT config_val FROM config WHERE config_var = 'db_version'");
     $num_version = 0;
 
     if (!$res) {
         $query = file_get_contents("0_base_version.sql");
-        $res = @mysqli_multi_query($link, $query);
+        $res = $db->query($query);
         $_msg[] = "Init version 0<br/>";
     } else {
         $row = $res->fetchAll();
