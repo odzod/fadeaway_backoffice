@@ -55,7 +55,7 @@ function getDb()
     include_once(__DIR__ . "/../include/config.include.php");
     try {
         $dsn = sprintf('mysql:dbname=%s;host=%s', mysql_db, mysql_host);
-        die($dsn . " - " . mysql_user . " - " . mysql_password)
+        die($dsn . " - " . mysql_user . " - " . mysql_password);
         $db = new PDO($dsn, mysql_user, mysql_password);
     } catch (Exception $e) {
         return false;
