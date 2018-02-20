@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="831e3601-1bc1-427d-be57-9f8c7812b4ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/Models.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/News.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/Users.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sql/3_add_base_news.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change beforePath="$PROJECT_DIR$/sql/1_add_users_news_et_type.sql" afterPath="$PROJECT_DIR$/sql/1_add_users_news_et_type.sql" />
-      <change beforePath="$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql" afterPath="$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,16 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.include.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/config.include.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="0_base_version.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/0_base_version.sql">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -56,8 +40,8 @@
       <file leaf-file-name="1_add_users_news_et_type.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/1_add_users_news_et_type.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="15" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="20" selection-end-column="15" />
+            <state relative-caret-position="330">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -67,7 +51,17 @@
         <entry file="file://$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3_add_base_news.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sql/3_add_base_news.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -154,6 +148,7 @@
         <option value="$PROJECT_DIR$/sql/1_add_users_news_et_type.sql" />
         <option value="$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql" />
         <option value="$PROJECT_DIR$/app/models/News.php" />
+        <option value="$PROJECT_DIR$/sql/3_add_base_news.sql" />
       </list>
     </option>
   </component>
@@ -247,6 +242,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Applications\workspace\testpb\fadeaway_backoffice\sql" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -276,12 +276,12 @@
       <workItem from="1517663620717" duration="123000" />
       <workItem from="1517663764621" duration="64000" />
       <workItem from="1517682231201" duration="3338000" />
-      <workItem from="1519129588248" duration="3345000" />
+      <workItem from="1519129588248" duration="4110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8706000" />
+    <option name="totallyTimeSpent" value="9471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1282" y="139" width="1004" height="1096" extended-state="0" />
@@ -366,22 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/1_add_users_news_et_type.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="20" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Models.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -420,6 +404,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/2_ajout_utilisateurs.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/1_add_users_news_et_type.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/3_add_base_news.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
