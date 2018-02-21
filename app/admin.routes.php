@@ -17,3 +17,24 @@ $app->get('/sql/dbupdate', function () {
     }
 
 });
+
+$app->get('admin/news/list', function () {
+
+    $model = new News(getDb());
+    $page = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 0;
+    $res = $model->getAdminNewsList($page);
+    $res = json_encode(
+        array(
+          "total_count" => count($res)
+        , "items" => $res
+        )
+    );
+    if (!$res) {
+        response_ok(json_encode(array(
+            "success" => false
+        , "msg" => "Erreur RES (News)getLastNews"
+        )));
+    }
+    response_ok($res);
+
+});
