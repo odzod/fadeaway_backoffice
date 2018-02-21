@@ -1,16 +1,16 @@
 <?php
 
 include_once(__DIR__ . "/../include/functions.include.php");
+include_once(__DIR__ . "/../include/class.include.php");
 
 // Les routes admins sont simplements séparés dans un fichier pour l'instant
 include_once(__DIR__ . "/../app/admin.routes.php");
 
-include_once(__DIR__ . "/../include/class.include.php");
 
 //ici les routes de l'api "normal"
 $app->get('/news/last', function () {
 
-    $model = new Models_News(getDb());
+    $model = new News(getDb());
     $page = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 0;
     $res = $model->getLastNews($page);
     $res = json_encode(

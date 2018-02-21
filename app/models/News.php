@@ -6,7 +6,7 @@
  * Time: 13:36
  */
 
-class Models_News extends Models_Models
+class News extends Models
 {
 
     public $item_per_page = 10;
@@ -14,13 +14,15 @@ class Models_News extends Models_Models
     function __construct($db)
     {
         parent::__construct($db);
+        $this->table = "news";
+        $this->col_id = "news_id";
     }
 
 
     public function getLastNews($page = 0)
     {
-        $limit_max = intval($page)+1*($this->item_per_page);
-        $limit_min = $limit_max-($this->item_per_page);
+        $limit_max = intval($page) + 1 * ($this->item_per_page);
+        $limit_min = $limit_max - ($this->item_per_page);
         $query = "
             SELECT 
               news_id,
@@ -36,13 +38,13 @@ class Models_News extends Models_Models
         ";
         $res = $this->db->query($query)->fetchAll();
         $data = array();
-        foreach($res as $news){
-            $user = new Models_Users($this->db);
-            $user->loadDataFromId($news['news_user_id']);
+        foreach ($res as $news) {
+            $user = new Users($this->db);
+            $user->loadDataById($news['news_user_id']);
             $_userData = $user->getData();
             unset($news['news_user_id']);
-            $news['news_user_nom']= $_userData['user_nom'];
-            $news['news_user_prenom']= $_userData['user_prenom'];
+            $news['news_user_nom'] = $_userData['user_nom'];
+            $news['news_user_prenom'] = $_userData['user_prenom'];
             $data[] = $news;
         }
         return $data;

@@ -8,7 +8,7 @@ $app->get('/sql/dbupdate', function () {
         require_once(__DIR__ . "/../sql/dbupdate.php");
         $res = update_db();
         $res = json_encode(array("success" => true, "data" => json_encode($res)));
-        if(!$res){
+        if (!$res) {
             response_ko();
         }
         response_ok($res);

@@ -7,7 +7,7 @@ function update_db()
 
     $db = getDb();
 
-    if(!$db){
+    if (!$db) {
         $_msg[] = "Erreur lors de la connexion a la bdd";
     }
 
@@ -15,10 +15,10 @@ function update_db()
     $num_version = 0;
 
     if (!$res) {
-        $query = file_get_contents(__DIR__."/../sql/0_base_version.sql");
+        $query = file_get_contents(__DIR__ . "/../sql/0_base_version.sql");
         $res = $db->query($query);
-        if(!$res){
-            $_msg[]= 'Erreur lors de l init';
+        if (!$res) {
+            $_msg[] = 'Erreur lors de l init';
         }
         $_msg[] = "Init version 0<br/>";
     } else {
@@ -36,7 +36,7 @@ function update_db()
         if (!in_array($file, array(".", "..", "dbupdate.php")) && $breaker == false) {
             $_name = explode("_", $file);
             if (intval($_name[0] > intval($num_version))) {
-                $query = file_get_contents(__DIR__."/../sql/".$file);
+                $query = file_get_contents(__DIR__ . "/../sql/" . $file);
                 $query .= "UPDATE config SET config_val ='" . $_name[0] . "' WHERE config_var = 'db_version';";
                 $res = $db->query($query);
                 $num_version = $_name[0];
