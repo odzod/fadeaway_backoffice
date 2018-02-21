@@ -31,7 +31,7 @@ class News extends Models
               news_img,
               news_contains,
               news_user_id,
-              news_create,
+              date_format(news_create,'%d/%m/%Y') as news_create,
               news_update
             FROM news ORDER BY news_id DESC limit $limit_min , $limit_max
         ";
