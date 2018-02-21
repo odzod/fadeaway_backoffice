@@ -25,6 +25,7 @@ class News extends Models
             SELECT 
               news_id,
               news_type,
+              news_difuse,
               news_title,
               news_title_contains,
               news_img,
@@ -32,7 +33,7 @@ class News extends Models
               news_user_id,
               news_create,
               news_update
-            FROM news WHERE news_difuse = 1 ORDER BY news_id DESC limit $limit_min , $limit_max
+            FROM news ORDER BY news_id DESC limit $limit_min , $limit_max
         ";
         $res = $this->db->query($query)->fetchAll();
         $data = array();
