@@ -35,7 +35,7 @@ class News extends Models
               date_format(news_create,'%d/%m/%Y') as news_create,
               date_format(news_update,'%d/%m/%Y') as news_update 
             FROM news
-            left join news_type on nt_id = news.type ORDER BY news_id DESC limit $limit_min , $limit_max
+            left join news_type on nt_id = news_type ORDER BY news_id DESC limit $limit_min , $limit_max
         ";
         $res = $this->db->query($query)->fetchAll();
         $data = array();
