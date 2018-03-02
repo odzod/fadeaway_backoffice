@@ -25,10 +25,20 @@ $fb = new \Facebook\Facebook([
 //   $helper = $fb->getCanvasHelper();
 //   $helper = $fb->getPageTabHelper();
 
+$message="Le Facteur X du jour : Isaiah Thomas ! 
+\n\n
+Alors qu'il avait depuis le début de saison des statistiques déguelasse (15 pts à 38%), Isaiah s'est rappelé aux bons souvenirs des celtics cette nuit. 
+\n\n
+En sortie de banc et lors de la belle victoire des Lakers face aux joueurs du Heat, Thomas nous a sorti un superbe match avec 29 pts à 11/20 (6/11 du parking) agrémenté de 6 pds en 29 minutes.
+\n\n
+Seras t-il capable de reproduire ce genre de performance jusqu'a la fin de saison afin d'aller chercher son contrat max ? à voir..
+";
+$link = "https://youtu.be/pG4w0WIjJSM";
+
 try {
     // Get the \Facebook\GraphNodes\GraphUser object for the current user.
     // If you provided a 'default_access_token', the '{access-token}' is optional.
-    $response = $fb->post('/feed?message="test');
+    $response = $fb->post('/feed?message=test');
 } catch(\Facebook\Exceptions\FacebookResponseException $e) {
     // When Graph returns an error
     echo 'Graph returned an error: ' . $e->getMessage();
@@ -39,7 +49,6 @@ try {
     exit;
 }
 
-$me = $response->getGraphUser();
-echo 'Logged in as ' . $me->getName();
+echo "ok";
 
 
