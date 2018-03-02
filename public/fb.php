@@ -38,7 +38,9 @@ $link = "https://youtu.be/pG4w0WIjJSM";
 try {
     // Get the \Facebook\GraphNodes\GraphUser object for the current user.
     // If you provided a 'default_access_token', the '{access-token}' is optional.
-    $response = $fb->post('/feed',array("message"=>$message,"link"=>$link,"privacy"=>'EVERYONE'));
+    $response = $fb->post('/feed',array("message"=>$message,"link"=>$link,"privacy"=>"
+    {'EVERYONE':'allow'}
+    "));
 } catch(\Facebook\Exceptions\FacebookResponseException $e) {
     // When Graph returns an error
     echo 'Graph returned an error: ' . $e->getMessage();
