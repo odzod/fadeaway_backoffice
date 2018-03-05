@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+
 include_once(__DIR__ . "/../include/functions.include.php");
 include_once(__DIR__ . "/../include/class.include.php");
 
@@ -27,6 +29,25 @@ $app->get('/news/last', function () {
     }
     response_ok($res);
 
+});
+
+$app->get('/news/{idNews}', function ($idNews,Request $request) use ($app){
+    $model = new News(getDb());
+    $page = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 0;
+    $res = $model->getNews($idNews);
+    $res = json_encode(
+        array(
+            "success" => true
+        , "data" => $res
+        )
+    );
+    if (!$res) {
+        response_ok(json_encode(array(
+            "success" => false
+        , "msg" => "Erreur RES (News)getLastNews"
+        )));
+    }
+    response_ok($res);
 });
 
 /*

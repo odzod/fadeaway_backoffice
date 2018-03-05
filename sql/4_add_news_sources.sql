@@ -1,0 +1,1 @@
+ALTER TABLE news ADD news_sources varchar(512);
