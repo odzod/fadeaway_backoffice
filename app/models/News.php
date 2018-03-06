@@ -111,6 +111,8 @@ class News extends Models
             unset($news['news_user_id']);
             $news['news_user_nom'] = $_userData['user_nom'][0] . ".";
             $news['news_user_prenom'] = $_userData['user_prenom'];
+            $news['news_contains2'] = html_to_obj($news['news_contains']);
+            $news['news_contains3'] = $news['news_contains']);
             $data[] = $news;
         }
         return $data;

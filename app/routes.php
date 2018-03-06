@@ -39,7 +39,7 @@ $app->get('/news/{idNews}', function ($idNews,Request $request) use ($app){
         array(
             "success" => true
         , "data" => $res
-        )
+        ),JSON_HEX_QUOT | JSON_HEX_TAG
     );
     if (!$res) {
         response_ok(json_encode(array(
