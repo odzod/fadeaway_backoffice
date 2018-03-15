@@ -95,8 +95,8 @@ function redesign_image($img, $name)
 
 //    $img = "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/28660939_210820776162874_6194882502444195643_n.jpg";
     $chemin = $img; // Adresse complete
-    $x_c = 750; // Taille de l'image
-    $y_c = 500;
+    $x_c = 690; // Taille de l'image
+    $y_c = 460;
     $qualite = 80; // Qualite de l'image (0=pourrit/100=super)
     $color = "000000"; // Couleur de fond
 
