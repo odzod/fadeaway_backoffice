@@ -52,5 +52,5 @@ $app->get('admin/news/add', function(){
 });
 
 $app->post('admin/news/update', function (Request $request) use ($app){
-    print_r($request->request->get("uploadFile"));
+    print_r($_FILES['uploadFile']);
 });
