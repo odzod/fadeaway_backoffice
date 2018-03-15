@@ -48,3 +48,7 @@ $app->get('admin/news/add', function(){
    ));
    response_ok($res);
 });
+
+$app->post('admin/news/update', function (Request $request) use ($app){
+    print_r($request);
+});
