@@ -20,7 +20,7 @@ class News extends Models
 
     public function addNews()
     {
-        $sql = "INSERT INTO news(news_title) values('Nouvelle news, titre ici');";
+        $sql = "INSERT INTO news(news_title,news_user_id) values('Nouvelle news, titre ici',2);";
         $this->db->query($sql);
         $id = $this->db->lastInsertId();
         return $id;
