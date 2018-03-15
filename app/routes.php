@@ -52,21 +52,8 @@ $app->get('/news/{idNews}', function ($idNews,Request $request) use ($app){
 
 $app->get("/images/test",function () {
 
-    $model = new News(getDb());
-    $page = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 0;
-    $res = $model->getLastNews($page);
-    $res = json_encode(
-        array(
-            "success" => true
-        , "data" => $res
-        )
-    );
-    if (!$res) {
-        response_ok(json_encode(array(
-            "success" => false
-        , "msg" => "Erreur RES (News)getLastNews"
-        )));
-    }
+    redesign_image("http://api.fadeaway.fr/images/28660939_210820776162874_6194882502444195643_n.jpg","kawhi");
+    $res = json_encode(array("success" => true));
     response_ok($res);
 
 });
