@@ -137,11 +137,11 @@ function redesign_image($img, $name)
         exit;
     }
 
-    Header("Content-type: image/jpeg");
+//    Header("Content-type: image/jpeg");
 
     $image = imagecreatetruecolor($x_c, $y_c);
     $color = imagecolorallocate($image, hexdec($color[0] . $color[1]), hexdec($color[2] . $color[3]), hexdec($color[4] . $color[5]));
-    imagefilledrectangle($image, 0, 0, $x_c, $y_c, $color);
+    imagefilledrectangle($image, 0, 0, $x_c, $y_c);
     imagecopyresampled($image, $image_new, $x_p, $y_p, 0, 0, $x_t, $y_t, $size[0], $size[1]);
     imagejpeg($image, __DIR__ . '/../public/images/' . $name . '.jpeg', $qualite);
 
