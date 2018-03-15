@@ -50,6 +50,27 @@ $app->get('/news/{idNews}', function ($idNews,Request $request) use ($app){
     response_ok($res);
 });
 
+$app->get("/images/test",function () {
+
+    $model = new News(getDb());
+    $page = (isset($_REQUEST['page'])) ? $_REQUEST['page'] : 0;
+    $res = $model->getLastNews($page);
+    $res = json_encode(
+        array(
+            "success" => true
+        , "data" => $res
+        )
+    );
+    if (!$res) {
+        response_ok(json_encode(array(
+            "success" => false
+        , "msg" => "Erreur RES (News)getLastNews"
+        )));
+    }
+    response_ok($res);
+
+});
+
 /*
 $app->post('/tiers/connexion', function (Request $request) use ($app){
     $trackingLogin = $request->request->get("trackingLogin");
