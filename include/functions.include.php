@@ -93,7 +93,7 @@ function html_to_obj($html)
 function redesign_image($img, $name)
 {
 
-    $img = "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/28660939_210820776162874_6194882502444195643_n.jpg";
+//    $img = "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/28660939_210820776162874_6194882502444195643_n.jpg";
     $chemin = $img; // Adresse complete
     $x_c = 610; // Taille de l'image
     $y_c = 406;
