@@ -38,3 +38,13 @@ $app->get('admin/news/list', function () {
     response_ok($res);
 
 });
+
+$app->get('admin/news/add', function(){
+   $model = new News(getDb());
+   $id = $model->addNews();
+   $res = json_encode(array(
+        "success"=>true,
+       "id"=>$id
+   ));
+   response_ok($res);
+});

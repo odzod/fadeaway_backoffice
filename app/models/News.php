@@ -18,6 +18,14 @@ class News extends Models
         $this->col_id = "news_id";
     }
 
+    public function addNews()
+    {
+        $sql = "INSERT INTO news(news_title) values('Nouvelle news, titre ici');";
+        $this->db->query($sql);
+        $id = $this->db->lastInsertId();
+        return $id;
+    }
+
     public function getAdminNewsList($page = 0)
     {
         $limit_max = intval($page) + 1 * ($this->item_per_page);
