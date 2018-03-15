@@ -104,7 +104,7 @@ class News extends Models
               news_img,
               news_contains,
               news_user_id,
-              news_difuse
+              news_difuse,
               date_format(news_create,'%d/%m/%Y') as news_create,
               date_format(news_update,'%d/%m/%Y') as news_update 
             FROM news
