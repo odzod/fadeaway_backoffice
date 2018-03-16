@@ -162,6 +162,7 @@ class News extends Models
         $this->db->query($sql);
 
         $data = $this->getNews($_POST['news_id']);
+        echo "/**** ".$data['news_difuse']." --- ".$data['news_facebook']." ***/";
         if (($data['news_difuse'] == 1 or $data['news_difuse'] == "1")
             and ($data['news_facebook'] == "" or empty($data['news_facebook']))) {
             $test = new \Html2Text\Html2Text();
