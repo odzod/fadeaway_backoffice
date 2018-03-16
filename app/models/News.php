@@ -162,17 +162,19 @@ class News extends Models
         $this->db->query($sql);
 
         $data = $this->getNews($_POST['news_id']);
-        if(($data['news_difuse']==1 or $data['news_difuse']=="1")
-        and ($data['news_facebook']=="" or empty($data['news_facebook']))){
+        if (($data['news_difuse'] == 1 or $data['news_difuse'] == "1")
+            and ($data['news_facebook'] == "" or empty($data['news_facebook']))) {
             $test = new \Html2Text\Html2Text();
-            $facebook1 = $test->convert($_POST['news_contains']);
-            $this->addToFacebook($_POST['news_id'],$facebook1,$data['news_img']);
+            $facebook0 = $test->convert($_POST['news_title']);
+            $facebook1 = $test->convert($_POST['news_title_contains']);
+            $facebook2 = $test->convert($_POST['news_contains']);
+            $this->addToFacebook($_POST['news_id'], $facebook0 . "\n\n" . $facebook1 . "\n\n" . $facebook2, $data['news_img']);
         }
 
         return true;
     }
 
-    public function addToFacebook($id,$msg,$img)
+    public function addToFacebook($id, $msg, $img)
     {
 
         require_once __DIR__ . '/../../vendor/Facebook/autoload.php';
