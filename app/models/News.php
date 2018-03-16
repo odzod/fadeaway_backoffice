@@ -131,7 +131,7 @@ class News extends Models
         if (isset($_FILES['uploadFile'])) {
             $img = true;
             $tmp_name = $_FILES["uploadFile"]["tmp_name"];
-            $name = basename($_FILES["pictures"]["name"]);
+            $name = basename($_FILES["uploadFile"]["name"]);
             move_uploaded_file($tmp_name, __DIR__ . "/../../public/images/" . $name);
             redesign_image("http://api.fadeaway.fr/images/" . $name, "news_" . $_POST['news_id']);
         }
