@@ -320,7 +320,7 @@ class Html2Text {
             case "iframe":
                 $output .= "\n";
                 $src = $node->getAttribute("src");
-                $output .=  $src;
+                $output .=  str_replace("//","http://",$src);
                 $output .= "\n";
                 break;
             case "div":
