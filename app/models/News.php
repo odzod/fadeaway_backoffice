@@ -194,7 +194,7 @@ class News extends Models
 
 
         $message = $msg;
-        $link = "http://fb.fadeaway.fr/index.php?news=10";
+        $link = "http://fb.fadeaway.fr/index.php?news=".$id;
         $response = $fb->post('/feed', array("message" => $message, "link" => $link));
         $sql = "UPDATE news SET
           news_facebook = 'ok'
@@ -202,7 +202,6 @@ class News extends Models
         ";
         $this->db->query($sql);
 
-//        die('test');
 
     }
 
