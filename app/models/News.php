@@ -147,7 +147,9 @@ class News extends Models
         $this->db->query($sql);
 
         $test = new \Html2Text\Html2Text();
+        echo "/**** $sql ****/";
         echo "/****".$test->convert($_POST['news_contains'])."***/";
+        die('test');
 
         return true;
     }
