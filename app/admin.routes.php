@@ -52,5 +52,12 @@ $app->get('admin/news/add', function(){
 });
 
 $app->post('admin/news/update', function (Request $request) use ($app){
-    print_r($_FILES['uploadFile']);
+
+    $model = new News(getDb());
+    $status = $model->updateNews();
+    $res = json_encode(array(
+        "success"=>true
+    ));
+    response_ok($res);
+
 });

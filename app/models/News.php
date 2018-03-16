@@ -20,7 +20,7 @@ class News extends Models
 
     public function addNews()
     {
-        $sql = "INSERT INTO news(news_title,news_user_id) values('Nouvelle news, titre ici',2);";
+        $sql = "INSERT INTO news(news_title,news_user_id) VALUES('Nouvelle news, titre ici',2);";
         $this->db->query($sql);
         $id = $this->db->lastInsertId();
         return $id;
@@ -123,6 +123,29 @@ class News extends Models
             $data[] = $news;
         }
         return $data;
+    }
+
+    public function updateNews()
+    {
+        $img = false;
+        if (isset($_FILES['uploadFile'])) {
+            $img = true;
+            $tmp_name = $_FILES["uploadFile"]["tmp_name"];
+            $name = basename($_FILES["pictures"]["name"]);
+            move_uploaded_file($tmp_name, __DIR__ . "/../../public/images/" . $name);
+            redesign_image("http://api.fadeaway.fr/images/" . $name, "news_" . $_POST['news_id']);
+        }
+        $sql = "UPDATE news SET
+          news_difuse = ".(($_POST['news_difuse']==true || $_POST['news_difuse']=="true")?1:0)."
+          ,news_update = current_date
+          ,news_title = '".addslashes($_POST['news_title'])."'
+          ,news_title_contains = '".addslashes($_POST['news_title_contains'])."'
+          ,news_contains = '".addslashes($_POST['news_contains'])."'
+          ".(($img)?",news_img = 'http://api.fadeaway.fr/images/news_".$_POST['news_id'].".jpeg'":"")."
+          WHERE news_id = ".$_POST['news_id']."
+        ";
+        $this->db->query($sql);
+        return true;
     }
 
 }

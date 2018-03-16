@@ -9,3 +9,4 @@
 require_once(__DIR__."/../app/models/Models.php");
 require_once(__DIR__."/../app/models/News.php");
 require_once(__DIR__."/../app/models/Users.php");
+require_once(__DIR__."/../include/Html2Text.php");

@@ -1,0 +1,1 @@
+ALTER TABLE news ADD news_facebook varchar(512);
