@@ -149,9 +149,9 @@ class News extends Models
 
         }
 
-
+        $difuse = (($_POST['news_difuse'] == false || $_POST['news_difuse'] == "false") ? 0 : 1);
         $sql = "UPDATE news SET
-          news_difuse = '" . (($_POST['news_difuse'] == false || $_POST['news_difuse'] == "false") ? 0 : 1) . "'
+          news_difuse = '" . $difuse . "'
           ,news_update = now()
           ,news_title = '" . addslashes($_POST['news_title']) . "'
           ,news_title_contains = '" . addslashes($_POST['news_title_contains']) . "'
@@ -162,8 +162,8 @@ class News extends Models
         $this->db->query($sql);
 
         $data = $this->getNews($_POST['news_id']);
-        echo "/**** ".$data['news_difuse']." --- ".$data['news_facebook']." ***/";
-        if (($data['news_difuse'] == 1 or $data['news_difuse'] == "1")
+//        echo "/**** ".$data['news_difuse']." --- ".$data['news_facebook']." ***/";
+        if ($difuse == 1
             and ($data['news_facebook'] == "" or empty($data['news_facebook']))) {
             $test = new \Html2Text\Html2Text();
             $facebook0 = $test->convert($_POST['news_title']);
@@ -201,7 +201,7 @@ class News extends Models
         ";
         $this->db->query($sql);
 
-        die('test');
+//        die('test');
 
     }
 
