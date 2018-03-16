@@ -20,7 +20,7 @@ class News extends Models
 
     public function addNews()
     {
-        $sql = "INSERT INTO news(news_title,news_user_id) VALUES('Nouvelle news, titre ici',2);";
+        $sql = "INSERT INTO news(news_title,news_type,news_user_id) VALUES('Nouvelle news, titre ici',1,2);";
         $this->db->query($sql);
         $id = $this->db->lastInsertId();
         return $id;
@@ -105,6 +105,7 @@ class News extends Models
               news_contains,
               news_user_id,
               news_difuse,
+              news_facebook,
               date_format(news_create,'%d/%m/%Y') as news_create,
               date_format(news_update,'%d/%m/%Y') as news_update 
             FROM news
@@ -136,12 +137,18 @@ class News extends Models
             redesign_image("http://api.fadeaway.fr/images/" . $name, "news_" . $_POST['news_id']);
         }
 
-        $tmp = explode("<iframe", $_POST['news_contains']);
-        $tmp2 = explode("</iframe>", $tmp[1]);
-        $tmp3 = explode("src=\"", $tmp[1]);
-        $tmp4 = explode("\" ", $tmp3[1]);
 
-        $_POST['news_contains'] = $tmp[0] . "<iframe width=\"80%\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
+        if (stristr($_POST['news_contains'], 'iframe') === FALSE) {
+            //nrf
+        } else {
+            $tmp = explode("<iframe", $_POST['news_contains']);
+            $tmp2 = explode("</iframe>", $tmp[1]);
+            $tmp3 = explode("src=\"", $tmp[1]);
+            $tmp4 = explode("\" ", $tmp3[1]);
+            $_POST['news_contains'] = $tmp[0] . "<iframe width=\"80%\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
+
+        }
+
 
         $sql = "UPDATE news SET
           news_difuse = '" . (($_POST['news_difuse'] == false || $_POST['news_difuse'] == "false") ? 0 : 1) . "'
@@ -154,12 +161,43 @@ class News extends Models
         ";
         $this->db->query($sql);
 
-        $test = new \Html2Text\Html2Text();
-        echo "/**** $sql ****/";
-        echo "/****" . $test->convert($_POST['news_contains']) . "***/";
-        die('test');
+        $data = $this->getNews($_POST['news_id']);
+        if(($data['news_difuse']==1 or $data['news_difuse']=="1")
+        and ($data['news_facebook']=="" or empty($data['news_facebook']))){
+            $test = new \Html2Text\Html2Text();
+            $facebook1 = $test->convert($_POST['news_contains']);
+            $this->addToFacebook($_POST['news_id'],$facebook1,$data['news_img']);
+        }
 
         return true;
+    }
+
+    public function addToFacebook($id,$msg,$img)
+    {
+
+        require_once __DIR__ . '/../../vendor/Facebook/autoload.php';
+
+        $token_page = "EAAcQrm4dKVMBAFqFoWTAv2uEmuZArGcFQRrRJvdrnEaZCZCbSrKEpjJxATr1rZC4tL3GAPSeu2MmUmTzkEPYIGOLNEdkOfLzmWz42ns7t5Nwb7PJytDAIm15tZACKGhnKkpM9EawpJnZCKxfY5DBpntcdff3biAeFdOpPDYDWLKA1n9CeBXhZCW14UmyYudxOIWCad3tx3fGQZDZD";
+        $token_pubish = "EAAcQrm4dKVMBAPO9KuE19tE7g7LBUaGpe5OEMc5qKRR4279UKxuHBwo9uuzL2hi5zZCUVlOMt8ZAzqzh7boGe5k6xqp4zP3qdKsEWRPe8uVZBFueaQZAXHnesZCNhRButGWa47kPPZA6eZAj4QWr1BwOWQd6ZBCPM4f7vZC0yJlRj9kfJfqjafa74d9VsSZAQv8meAUFZCNdLkIrAZDZD";
+        $token_long = "EAAcQrm4dKVMBAEZAAszzChZBUkK6gLYhTZB7B5l7FAV4hfCPIY9HF1D3jgwcD5hZCsKCfdsl2ZA96E4fd45TFbfPU7EVoaPZALJNQZAZBjgG602EgDgL81CXumJfqBFC5Qun7vCoVrZCX64CdzZCAt6cfKO6kw7DiheBenitVhEmt7rAZDZD";
+
+        $fb = new \Facebook\Facebook([
+            'app_id' => '1988666194733395',
+            'app_secret' => '8780450b687f8dfa978d15935d69c2ce',
+            'default_graph_version' => 'v2.12',
+            'default_access_token' => $token_long, // optional
+        ]);
+
+
+        $message = $msg;
+        $link = $img;
+        $response = $fb->post('/feed', array("message" => $message, "link" => $link));
+        $sql = "UPDATE news SET
+          news_facebook = 'ok'
+          WHERE news_id = " . $id . "
+        ";
+        $this->db->query($sql);
+
     }
 
 }
