@@ -200,6 +200,8 @@ class News extends Models
         ";
         $this->db->query($sql);
 
+        die('test');
+
     }
 
 }
