@@ -194,7 +194,7 @@ class News extends Models
 
 
         $message = $msg;
-        $link = $img;
+        $link = "http://fb.fadeaway.fr/index.php?news=10";
         $response = $fb->post('/feed', array("message" => $message, "link" => $link));
         $sql = "UPDATE news SET
           news_facebook = 'ok'
