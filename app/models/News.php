@@ -137,7 +137,7 @@ class News extends Models
         }
         $sql = "UPDATE news SET
           news_difuse = '".(($_POST['news_difuse']==false || $_POST['news_difuse']=="false")?0:1)."'
-          ,news_update = current_date
+          ,news_update = now()
           ,news_title = '".addslashes($_POST['news_title'])."'
           ,news_title_contains = '".addslashes($_POST['news_title_contains'])."'
           ,news_contains = '".addslashes($_POST['news_contains'])."'

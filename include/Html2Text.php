@@ -317,6 +317,12 @@ class Html2Text {
                 // add one line
                 $output .= "\n";
                 break;
+            case "iframe":
+                $output .= "\n";
+                $src = $node->getAttribute("src");
+                $output .=  $src;
+                $output .= "\n";
+                break;
             case "div":
                 break;
             case "a":
