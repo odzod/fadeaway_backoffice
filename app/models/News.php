@@ -136,7 +136,7 @@ class News extends Models
             redesign_image("http://api.fadeaway.fr/images/" . $name, "news_" . $_POST['news_id']);
         }
         $sql = "UPDATE news SET
-          news_difuse = ".(($_POST['news_difuse']==true || $_POST['news_difuse']=="true")?1:0)."
+          news_difuse = '".(($_POST['news_difuse']==false || $_POST['news_difuse']=="false")?0:1)."'
           ,news_update = current_date
           ,news_title = '".addslashes($_POST['news_title'])."'
           ,news_title_contains = '".addslashes($_POST['news_title_contains'])."'
@@ -145,6 +145,10 @@ class News extends Models
           WHERE news_id = ".$_POST['news_id']."
         ";
         $this->db->query($sql);
+
+        $test = new \Html2Text\Html2Text();
+        echo "/****".$test->convert($_POST['news_contains'])."***/";
+
         return true;
     }
 
