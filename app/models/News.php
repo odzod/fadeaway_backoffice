@@ -135,20 +135,28 @@ class News extends Models
             move_uploaded_file($tmp_name, __DIR__ . "/../../public/images/" . $name);
             redesign_image("http://api.fadeaway.fr/images/" . $name, "news_" . $_POST['news_id']);
         }
+
+        $tmp = explode("<iframe", $_POST['news_contains']);
+        $tmp2 = explode("</iframe>", $tmp[1]);
+        $tmp3 = explode("src=\"", $tmp[1]);
+        $tmp4 = explode("\" ", $tmp3[1]);
+
+        $_POST['news_contains'] = $tmp[0] . "<iframe width=\"80%\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
+
         $sql = "UPDATE news SET
-          news_difuse = '".(($_POST['news_difuse']==false || $_POST['news_difuse']=="false")?0:1)."'
+          news_difuse = '" . (($_POST['news_difuse'] == false || $_POST['news_difuse'] == "false") ? 0 : 1) . "'
           ,news_update = now()
-          ,news_title = '".addslashes($_POST['news_title'])."'
-          ,news_title_contains = '".addslashes($_POST['news_title_contains'])."'
-          ,news_contains = '".addslashes($_POST['news_contains'])."'
-          ".(($img)?",news_img = 'http://api.fadeaway.fr/images/news_".$_POST['news_id'].".jpeg'":"")."
-          WHERE news_id = ".$_POST['news_id']."
+          ,news_title = '" . addslashes($_POST['news_title']) . "'
+          ,news_title_contains = '" . addslashes($_POST['news_title_contains']) . "'
+          ,news_contains = '" . addslashes($_POST['news_contains']) . "'
+          " . (($img) ? ",news_img = 'http://api.fadeaway.fr/images/news_" . $_POST['news_id'] . ".jpeg'" : "") . "
+          WHERE news_id = " . $_POST['news_id'] . "
         ";
         $this->db->query($sql);
 
         $test = new \Html2Text\Html2Text();
         echo "/**** $sql ****/";
-        echo "/****".$test->convert($_POST['news_contains'])."***/";
+        echo "/****" . $test->convert($_POST['news_contains']) . "***/";
         die('test');
 
         return true;
