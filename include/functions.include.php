@@ -146,6 +146,58 @@ function redesign_image($img, $name)
     imagecopyresampled($image, $image_new, $x_p, $y_p, 0, 0, $x_t, $y_t, $size[0], $size[1]);
     imagejpeg($image, __DIR__ . '/../public/images/' . $name . '.jpeg', $qualite);
 
+    $chemin = $img; // Adresse complete
+//    die($img);
+    $x_c = 690; // Taille de l'image
+    $y_c = 380;
+    $qualite = 80; // Qualite de l'image (0=pourrit/100=super)
+    $color = "000000"; // Couleur de fond
+
+    $size = getimagesize($chemin);
+
+    if ($size[0] >= $x_c AND $size[1] >= $y_c) {
+        if (($size[0] / $x_c) > ($size[1] / $y_c)) {
+            $x_t = $x_c;
+            $y_t = floor(($size[1] * $x_c) / $size[0]);
+            $x_p = 0;
+            $y_p = ($y_c / 2) - ($y_t / 2);
+        } else {
+            $x_t = floor(($size[0] * $y_c) / $size[1]);
+            $y_t = $y_c;
+            $x_p = ($x_c / 2) - ($x_t / 2);
+            $y_p = 0;
+        }
+    } else {
+        $x_t = $size[0];
+        $y_t = $size[1];
+        $x_p = ($x_c / 2) - ($x_t / 2);
+        $y_p = ($y_c / 2) - ($y_t / 2);
+    }
+
+    $extension = strrchr($chemin, '.');
+    $extension = strtolower(substr($extension, 1));
+
+    if ($extension == 'jpg' OR $extension == 'jpeg') {
+        $image_new = imagecreatefromjpeg($chemin);
+    } elseif ($extension == 'gif') {
+        $image_new = imagecreatefromgif($chemin);
+    } elseif ($extension == 'png') {
+        $image_new = imagecreatefrompng($chemin);
+    } elseif ($extension == 'bmp') {
+        $image_new = imagecreatefromwbmp($chemin);
+    } else {
+        echo "Erreur !";
+        exit;
+    }
+
+//    Header("Content-type: image/jpeg");
+
+    $image = imagecreatetruecolor($x_c, $y_c);
+    $color = imagecolorallocate($image, hexdec($color[0] . $color[1]), hexdec($color[2] . $color[3]), hexdec($color[4] . $color[5]));
+    imagefilledrectangle($image, 0, 0, $x_c, $y_c);
+    imagecopyresampled($image, $image_new, $x_p, $y_p, 0, 0, $x_t, $y_t, $size[0], $size[1]);
+    imagejpeg($image, __DIR__ . '/../public/images/fb_' . $name . '.jpeg', $qualite);
+
     return true;
 
 }
