@@ -145,7 +145,7 @@ class News extends Models
             $tmp2 = explode("</iframe>", $tmp[1]);
             $tmp3 = explode("src=\"", $tmp[1]);
             $tmp4 = explode("\" ", $tmp3[1]);
-            $_POST['news_contains'] = $tmp[0] . "<iframe width=\"80%\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
+            $_POST['news_contains'] = $tmp[0] . "<iframe width=\"80%\" height=\"80%\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
 
         }
 
