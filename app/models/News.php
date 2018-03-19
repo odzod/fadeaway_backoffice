@@ -160,11 +160,17 @@ class News extends Models
 
         }
 
+        if (isset($_POST['news_type']) and !empty($_POST['news_type'])) {
+            $nt = ",news_type = '" . $_POST['news_type'] . "'";
+        } else {
+            $nt = "";
+        }
+
         $difuse = (($_POST['news_difuse'] == false || $_POST['news_difuse'] == "false") ? 0 : 1);
         $sql = "UPDATE news SET
           news_difuse = '" . $difuse . "'
           ,news_update = now()
-          ,news_type = '".$_POST['news_type']."'
+          " . $nt . "
           ,news_title = '" . addslashes($_POST['news_title']) . "'
           ,news_title_contains = '" . addslashes($_POST['news_title_contains']) . "'
           ,news_contains = '" . addslashes($_POST['news_contains']) . "'
@@ -173,7 +179,7 @@ class News extends Models
         ";
         $this->db->query($sql);
 
-        $_data = $this->db->query("SELECT * FROM news WHERE news_id = ".$_POST['news_id'])->fetchAll();
+        $_data = $this->db->query("SELECT * FROM news WHERE news_id = " . $_POST['news_id'])->fetchAll();
         $data = $_data[0];
 
         if ($difuse == 1
@@ -182,7 +188,8 @@ class News extends Models
             $facebook0 = $test->convert($_POST['news_title']);
             $facebook1 = $test->convert($_POST['news_title_contains']);
             $facebook2 = $test->convert($_POST['news_contains']);
-            $this->addToFacebook($_POST['news_id'], $facebook0 . "\n\n" . /*$facebook1 . "\n\n" . $facebook2 . */ "", $data['news_img']);
+            $this->addToFacebook($_POST['news_id'], $facebook0 . "\n\n" . /*$facebook1 . "\n\n" . $facebook2 . */
+                "", $data['news_img']);
         }
 
         return true;
@@ -206,7 +213,7 @@ class News extends Models
 
 
         $message = $msg;
-        $link = "http://fb.fadeaway.fr/index.php?news=".$id;
+        $link = "http://fb.fadeaway.fr/index.php?news=" . $id;
         $response = $fb->post('/feed', array("message" => $message, "link" => $link));
         $sql = "UPDATE news SET
           news_facebook = 'ok'
