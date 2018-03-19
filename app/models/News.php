@@ -20,7 +20,17 @@ class News extends Models
 
     public function addNews()
     {
-        $sql = "INSERT INTO news(news_title,news_type,news_user_id) VALUES('Nouvelle news, titre ici',1,2);";
+        $sql = "INSERT INTO news(
+          news_title
+          ,news_type
+          ,news_user_id
+          ,news_img
+          )
+          VALUES('Nouvelle news, titre ici'
+          ,1
+          ,2
+          ,'http://api.fadeaway.fr/images/no_image.jpeg'
+        );";
         $this->db->query($sql);
         $id = $this->db->lastInsertId();
         return $id;
@@ -145,7 +155,7 @@ class News extends Models
             $tmp2 = explode("</iframe>", $tmp[1]);
             $tmp3 = explode("src=\"", $tmp[1]);
             $tmp4 = explode("\" ", $tmp3[1]);
-            $_POST['news_contains'] = $tmp[0] . "<iframe width=\"80%\" height=\"80%\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
+            $_POST['news_contains'] = $tmp[0] . "<iframe class=\"youtubeiframe\" src=\"" . $tmp4[0] . "\" frameborder=\"0\" allowfullscreen=\"\"></iframe>" . $tmp2[1];
 
         }
 
@@ -170,7 +180,7 @@ class News extends Models
             $facebook0 = $test->convert($_POST['news_title']);
             $facebook1 = $test->convert($_POST['news_title_contains']);
             $facebook2 = $test->convert($_POST['news_contains']);
-            $this->addToFacebook($_POST['news_id'], $facebook0 . "\n\n" . $facebook1 . "\n\n" . $facebook2, $data['news_img']);
+            $this->addToFacebook($_POST['news_id'], $facebook0 . "\n\n" . /*$facebook1 . "\n\n" . $facebook2 . */ "", $data['news_img']);
         }
 
         return true;
