@@ -109,6 +109,7 @@ class News extends Models
             SELECT 
               news_id,
               nt_type as news_type,
+              nt_id as news_type_val,
               news_title,
               news_title_contains,
               news_img,
@@ -163,6 +164,7 @@ class News extends Models
         $sql = "UPDATE news SET
           news_difuse = '" . $difuse . "'
           ,news_update = now()
+          ,news_type = '".$_POST['news_type']."'
           ,news_title = '" . addslashes($_POST['news_title']) . "'
           ,news_title_contains = '" . addslashes($_POST['news_title_contains']) . "'
           ,news_contains = '" . addslashes($_POST['news_contains']) . "'
